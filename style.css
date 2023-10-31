@@ -1,0 +1,189 @@
+:root {
+    --clr-primary-red: 0, 100%, 74%;
+    --clr-primary-green: 154, 59%, 51%;
+
+    --clr-accent-blue: 248, 32%, 49%;
+
+    --clr-neutral-dark: 249, 10%, 26%;
+    --clr-neutral-light: 246, 25%, 77%;
+
+    --fs-primary: 1rem;
+
+    --ff-primary: 'Poppins', sans-serif;
+
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+body {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-primary);
+    color: #FFF;
+    background-image: url(./images/bg-intro-mobile.png);
+    background-color: hsl(var(--clr-primary-red));
+}
+
+.main {
+    text-align: center;
+    margin: 4em auto;
+}
+
+.title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 2.25rem;
+    margin-block: 1em;
+}
+
+.text {
+    margin-inline: 1.5em;
+}
+
+.call-to-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-block-start: 4em;
+    padding-block: 1em;
+    background: hsl(var(--clr-accent-blue));
+    border-radius: 10px;
+    line-height: 1.625;
+    letter-spacing: .268;
+}
+
+.call-to-action > p {
+    /* line-height: 1.25rem; */
+    margin-top: 0;
+}
+
+.accent-text-bold {
+    font-weight: var(--fw-700);
+}
+
+form {
+    margin: 1em auto;
+}
+
+.form-bgd {
+    background: #FFF;
+    padding: 1em;
+    border-radius: 10px;
+    border: none;
+}
+
+.form-bgd > * {
+    width: 20.4375em;
+    margin-block: .5em;
+    padding-block: .75em;
+    padding-inline: 1.25em;
+    border-radius: 5px;
+    border: 1px solid #DEDEDE;
+}
+
+fieldset {
+    border: none;
+}
+
+.btn {
+    width: 100%;
+    background-color: hsl(var(--clr-primary-green));
+    color: #FFF;
+    padding-block: 1em;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.terms {
+    width: 100%;
+    color: hsl(var(--clr-neutral-light));
+    font-size: 0.6875rem;
+    border: none;
+    margin-block-start: 0;
+    line-height: 1.3125rem;
+}
+
+.terms > span {
+    font-weight: var(--fw-700);
+    color: hsl(var(--clr-primary-red));
+}
+
+.footer {
+    text-align: center;
+}
