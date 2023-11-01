@@ -124,8 +124,10 @@ body {
     padding-block: 1em;
     background: hsl(var(--clr-accent-blue));
     border-radius: 10px;
-    line-height: 1.625;
-    letter-spacing: .268;
+    line-height: 1.625rem;
+    letter-spacing: .0268rem;
+    box-shadow: 0px 8px 0px 0px rgba(0, 0, 0, 0.15);
+
 }
 
 .call-to-action > p {
@@ -146,6 +148,7 @@ form {
     padding: 1em;
     border-radius: 10px;
     border: none;
+    box-shadow: 0px 8px 0px 0px rgba(0, 0, 0, 0.15);
 }
 
 .form-bgd > * {
@@ -161,6 +164,10 @@ fieldset {
     border: none;
 }
 
+input:focus {
+    outline: 1px solid hsl(var(--clr-accent-blue));
+}
+
 .btn {
     width: 100%;
     background-color: hsl(var(--clr-primary-green));
@@ -169,6 +176,13 @@ fieldset {
     border: none;
     border-radius: 5px;
     text-transform: uppercase;
+    font-size: 0.9375rem;
+    font-weight: var(--fw-600);
+    letter-spacing: 0.0625rem;
+}
+
+.btn:hover {
+    cursor: pointer;
 }
 
 .terms {
@@ -195,7 +209,12 @@ fieldset {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        border: 10px solid cyan
+        padding-inline-start: 2em;
+        /* border: 10px solid cyan; */
+    }
+
+    .first-col {
+        margin-inline: 1.5em;
     }
 
     .col {
@@ -207,9 +226,19 @@ fieldset {
         line-height: 3.4375rem;
     }
 
+    .text {
+        text-align: left;
+        padding-inline-start: 2em;
+    }
+
     .call-to-action {
         width: 33.75rem;
         margin-inline: auto;
+        flex-direction: row;
+    }
+
+    .cta-line-one {
+        margin-inline-end: 3px;
     }
     
     .form-bgd {
