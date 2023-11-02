@@ -10,6 +10,7 @@
 
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script defer src="app.js"></script>
   
   <title>Frontend Mentor | Intro component with sign up form</title>
 
@@ -28,15 +29,46 @@
         <p class="cta-line-one"><span class="accent-text-bold">Try it free 7 days </span>then </p> 
         <p> $20/mo. thereafter</p>
       </div>
-      <form class="form-bgd" action="">
-        <!-- <fieldset> -->
-          <input type="text" class="first-name" id="first-name" name="first-name" placeholder="First Name">
-          <input type="text" name="" id="" placeholder="Last Name">
-          <input type="email" class="email" id="email-input" placeholder="Email Address">
-          <input type="password" class="password" id="password-input" placeholder="Password">
-          <button class="btn">Claim your free trial </button>
-          <p class="terms">By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
-          <!-- </fieldset> -->
+      <form class="form" id="form">
+        <div class="form-group">
+          <div class="input-group">
+            <input class="input" type="text" id="firstName" placeholder="First Name" name="name">
+            <img class="error-icon" src="./images/icon-error.svg" alt="error icon">
+          </div>
+          <div class="invalid-feedback">
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="input-group">
+            <input class="input" type="text" id="lastName" placeholder="Last Name " name="name">
+            <img class="error-icon" src="./images/icon-error.svg" alt="error icon">
+          </div>
+  
+          <div class="invalid-feedback">
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="input-group">
+            <input class="input" type="email" id="email" placeholder="Email Address" name="name">
+            <img class="error-icon" src="./images/icon-error.svg" alt="error icon">
+          </div>
+          <div class="invalid-feedback">
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="input-group">
+            <input class="input" type="password" id="password" placeholder="Password" name="name">
+            <img class="error-icon" src="./images/icon-error.svg" alt="error icon">
+          </div>
+          <div class="invalid-feedback">
+          </div>
+        </div>
+  
+        <button class="btn" type="submit">Claim your free trial</button>
+        <p class="terms">By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></p>
       </form>
     </div>
 
