@@ -99,8 +99,11 @@ body {
 }
 
 .main {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
     text-align: center;
-    margin: 4em auto;
     width: 22.4375rem;
 }
 
@@ -240,11 +243,31 @@ input:focus {
     text-align: center;
 }
 
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;}
+
+.error {
+    border: 2px solid hsl(var(--clr-primary-red));
+    background: url('./images/icon-error.svg') no-repeat;
+    background-position: 95% 50%;
+}
+
+.error-text {
+    color: hsl(var(--clr-primary-red));
+    font-style: italic;
+    font-size: 0.6875rem;
+    margin-left: auto;
+    margin-top: -4px;
+    margin-bottom: 10px;
+}
 @media (min-width: 90rem) {
     .main {
-        width: 90rem;
+        width: 100%;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
         padding-inline-start: 2em;
         /* border: 10px solid cyan; */
@@ -255,7 +278,7 @@ input:focus {
     }
 
     .col {
-        width: 50%;
+        width: 40%;
     }
 
     .title {
@@ -263,9 +286,20 @@ input:focus {
         line-height: 3.4375rem;
     }
 
+    .title > p {
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.625rem;
+    }
+
     .text {
+        width: 31.8275rem;
         text-align: left;
         padding-inline-start: 2em;
+    }
+
+    .text > p {
+        width: 32.8125rem;
     }
 
     .call-to-action {
@@ -279,7 +313,9 @@ input:focus {
     }
     
     .form {
+        background: #FFF;
         width: 33.75rem;
+        height: 29.625rem;
         display: flex;
         justify-content: center;
         align-items: center;

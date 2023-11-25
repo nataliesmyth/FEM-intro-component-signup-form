@@ -1,86 +1,56 @@
-const form = document.querySelector("#form");
-const name = document.getElementsByName('name')
-console.log()
-form.addEventListener("submit", (event) => {
-    let IsValidForm = true;
-    event.preventDefault();
-    const firstName = form.querySelector("#firstName");
-    const firstNameFormGroup = firstName.parentElement.parentElement;
-    const firstNameInvalidFeedback  = firstNameFormGroup.querySelector(".invalid-feedback");
+const form = document.getElementById('form');
+const firstName = document.getElementById('firstName');
+const lastName = document.getElementById('lastName');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
 
-    const lastName = form.querySelector("#lastName");
-    const lastNameFormGroup = lastName.parentElement.parentElement;
-    const lastNameInvalidFeedback  = lastNameFormGroup.querySelector(".invalid-feedback");
+form.addEventListener('submit', e => {
+    e.preventDefault();
 
-    const email = form.querySelector("#email");
-    const emailFormGroup = email.parentElement.parentElement;
-    const emailInvalidFeedback  = emailFormGroup.querySelector(".invalid-feedback");
+    let firstNameInput = firstName.value.trim();
+    let lastNameInput = lastName.value.trim();
+    let emailInput = email.value.trim();
+    let passwordInput = password.value.trim();
 
-    const password = form.querySelector("#password");
-    const passwordFormGroup = password.parentElement.parentElement;
-    const passwordInvalidFeedback  = passwordFormGroup.querySelector(".invalid-feedback");
-
-    const input = form.querySelectorAll('.input')
-    const test = document.getElementById('test')
-    console.log(test)
+    if (firstNameInput === '') {
+        invalidInput(firstName, 'First Name cannot be empty')
+    } else {
+        validInput(firstName);
+    }
     
-
-    const firstNameValue = firstName.value.trim();
-    const lastNameValue = lastName.value.trim();
-    const emailValue = email.value.trim();
-    const passwordValue = password.value.trim();
-
-    if(firstNameValue === ''){
-        firstNameFormGroup.classList.add("invalid");
-        firstNameInvalidFeedback.innerHTML = "First Name cannot be empty";
-        IsValidForm = false;
+    if (lastNameInput === '') {
+        invalidInput(lastName, 'Last Name cannot be empty')
+    } else {
+        validInput(lastName);
+        console.log(lastName)
     }
-    else {
-        firstNameFormGroup.classList.remove("invalid");
-        IsValidForm = true;
+    if (emailInput === '') {
+        invalidInput(email, 'email cannot be empty')
+    } else {
+        validInput(email);
     }
-
-    if(lastNameValue === ''){
-        lastNameFormGroup.classList.add("invalid");
-        lastNameInvalidFeedback.innerHTML = "Last Name cannot be empty";
-        IsValidForm = false;
-    }
-    else {
-        lastNameFormGroup.classList.remove("invalid");
-        IsValidForm = true;
-    }
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const isValidEmail = emailRegex.test(emailValue);
-    if(!isValidEmail){
-        emailFormGroup.classList.add("invalid");
-        emailInvalidFeedback.innerHTML = "Looks like this is not an email";
-        IsValidForm = false;
-    }
-    else {
-        emailFormGroup.classList.remove("invalid");
-        IsValidForm = true;
+    if (passwordInput === '') {
+        invalidInput(password, 'Password cannot be empty')
+    } else {
+        validInput(password);
     }
 
-    if(passwordValue === ''){
-        passwordFormGroup.classList.add("invalid");
-        passwordInvalidFeedback.innerHTML = "Password cannot be empty";
-        IsValidForm = false;
-    }
-    else {
-        passwordFormGroup.classList.remove("invalid");
-        IsValidForm = true;
-    }
-
-    if(!IsValidForm) {
-        name[0].placeholder = ''
-        name[1].placeholder = ''
-        name[3].placeholder = ''
-        firstName.style.outline = '2px solid hsl(0 100% 74%)';
-        lastName.style.outline = '2px solid hsl(0 100% 74%)';
-        email.style.outline = '2px solid hsl(0 100% 74%)';
-        password.style.outline = '2px solid hsl(0 100% 74%)';
-        return;
-    }
-
-    form.submit();  
 });
+
+function invalidInput(req, message) {
+    const formControl = req.parentElement;
+    console.log(formControl)
+    const span = formControl.querySelector('span');
+    const errorBorder = formControl.querySelector('input');
+    console.log(errorBorder)
+    span.innerText = message;
+    console.log(message)
+    req.className += 'error';
+    console.log(req)
+    span.className += 'error-text';
+    console.log(span)
+};
+
+function validInput(req) {
+    req.className += 'success';
+}
